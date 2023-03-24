@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.a.pro.movie.Service1">
+<insert id="movieinsert">
+insert into moviechart values(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7},#{param8})
+</insert>
+
+<select id="movieout" resultType="com.a.pro.movie.MovieDTO">
+select * from moviechart
+</select>
+
+<select id="moviedetail" resultType="com.a.pro.movie.MovieDTO">
+select * from moviechart where mname=#{param1}
+</select>
+
+<delete id="moviedelete">
+delete moviechart where mname=#{param1}
+</delete>
+
+<select id="moviemodify" resultType="com.a.pro.movie.MovieDTO">
+select * from moviechart where mname=#{param1}
+</select>
+
+<update id="moviemodify2">
+update moviechart set gerne=#{param2}, director=#{param3}, actor =#{param4},  day =#{param5},time =#{param6},show =#{param7},mposter=#{param8} where mname=#{param1} 
+</update>
+
+<select id="searchmname" resultType="com.a.pro.movie.MovieDTO">
+  select * from moviechart where mname like '%' || #{param1} || '%'
+</select>
+
+<select id="searchdirector" resultType="com.a.pro.movie.MovieDTO">
+  select * from moviechart where director like '%' || #{param1} || '%'
+</select>
+
+<select id="searchgerne" resultType="com.a.pro.movie.MovieDTO">
+  select * from moviechart where gerne like '%' || #{param1} || '%'
+</select>
+</mapper>
