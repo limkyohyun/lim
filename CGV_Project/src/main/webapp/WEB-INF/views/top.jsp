@@ -4,20 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<c:choose>
-	<c:when test="${param.result == 'loginfail'}">
-		<script type="text/javascript">
-		Swal.fire({
-			position: 'center',
-			icon: 'error',
-			title: '아이디 혹은 비밀번호가 틀림',
-			showConfirmButton: false,
-			timer: 1500
-		})
-		</script>
-	</c:when>
-</c:choose>
 <title>상단부</title>
 </head>
 <header>
@@ -33,7 +19,7 @@ CGV(임시)
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>                        
 		</button>
-	<a class="navbar-brand" href="/CGVProject/">HOME</a>
+	<a class="navbar-brand" href="http://localhost:8787/pro/">HOME</a>
 	</div> 
 	<div class="collapse navbar-collapse" id="myNavbar">
 	<ul class="nav navbar-nav">
@@ -72,8 +58,8 @@ CGV(임시)
 				<li><a href="logout"><span class="glyphicon glyphicon-log-out"></span>로그아웃</a></li>
 			</c:when>
 			<c:otherwise>
-				<li><a href="memberin"><span class="glyphicon glyphicon-user"></span>회원가입</a></li>
-				<li><a href="loginin"><span class="glyphicon glyphicon-log-in"></span>로그인</a></li>
+				<li><a href="member_jo"><span class="glyphicon glyphicon-user"></span>회원가입</a></li>
+				<li><a href="member_lo"><span class="glyphicon glyphicon-log-in"></span>로그인</a></li>
 			</c:otherwise>
 		</c:choose>
 	</ul>
